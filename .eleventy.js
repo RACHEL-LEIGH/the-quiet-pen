@@ -16,6 +16,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("relatedPosts", (posts, currentTitle, limit) =>
     posts.filter((post) => post.data.title !== currentTitle).slice(0, limit || 3)
   );
+  eleventyConfig.addFilter("isoDate", (date) => new Date(date).toISOString().slice(0, 10));
 
   eleventyConfig.addCollection("blogPosts", (collectionApi) =>
     collectionApi.getFilteredByGlob("src/blog/*.njk").sort((a, b) => b.date - a.date)
