@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.classList.add("js");</script>
+  <title>{{ title }} | {{ site.name }}</title>
+  <meta name="description" content="{{ description }}" />
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+
+  {# Open Graph / social #}
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="{{ site.name }}" />
+  <meta property="og:title" content="{{ title }} | {{ site.name }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <meta property="og:image" content="{{ site.url }}/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ title }} | {{ site.name }}" />
+  <meta name="twitter:description" content="{{ description }}" />
+  <meta name="twitter:image" content="{{ site.url }}/og-image.png" />
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#F8F5F1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}",
+    "description": "{{ site.description }}",
+    "email": "{{ site.email }}"
+  }
+  </script>
+
+  {% block head %}{% endblock %}
+</head>
+<body class="{{ bodyClass }}">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="/">
+        {% from "icons.njk" import brandMark %}
+        {{ brandMark("brand-mark") }}
+        <span>{{ site.name }}</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        {% for item in site.nav %}
+          <a href="{{ item.href }}" {% if page.url == item.href %}aria-current="page"{% endif %}>{{ item.label }}</a>
+        {% endfor %}
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-primary btn-sm nav-cta" href="/contact/">Start Your Project</a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          {% from "icons.njk" import menuIcon %}
+          {{ menuIcon() }}
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+      {% for item in site.nav %}
+        <a href="{{ item.href }}">{{ item.label }}</a>
+      {% endfor %}
+      <a class="btn btn-primary btn-block" href="/contact/">Start Your Project</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="/">
+            {{ brandMark("brand-mark") }}
+            <span>{{ site.name }}</span>
+          </a>
+          <p class="text-muted">{{ site.tagline }}</p>
+          <p class="serif-italic text-muted">"{{ site.guidingPrinciple }}"</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h4>Studio</h4>
+            {% for link in site.footerLinks.studio %}
+              <a href="{{ link.href }}">{{ link.label }}</a>
+            {% endfor %}
+          </div>
+          <div class="footer-col">
+            <h4>Support</h4>
+            {% for link in site.footerLinks.support %}
+              <a href="{{ link.href }}">{{ link.label }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-current-year></span> {{ site.name }}. Every word remains yours.</span>
+        <span>Made quietly, for meaningful moments.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-mobile-cta" aria-hidden="true">
+    <a class="btn btn-secondary btn-sm" href="/workbook/">Vows Workbook</a>
+    <a class="btn btn-primary btn-sm" href="/contact/">Start Your Project</a>
+  </div>
+
+  <a class="floating-contact" href="/contact/" aria-label="Contact The Quiet Pen">
+    {% from "icons.njk" import mailIcon %}
+    {{ mailIcon() }}
+  </a>
+
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <script src="/js/main.js" defer></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
