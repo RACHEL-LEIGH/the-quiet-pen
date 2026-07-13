@@ -10,6 +10,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/robots.txt");
 
   eleventyConfig.addFilter("jsonify", (value) => JSON.stringify(value, null, 2));
+  eleventyConfig.addFilter("flattenItems", (categories) =>
+    categories.reduce((all, category) => all.concat(category.items), [])
+  );
 
   eleventyConfig.addCollection("blogPosts", (collectionApi) =>
     collectionApi.getFilteredByGlob("src/blog/*.njk").sort((a, b) => b.date - a.date)

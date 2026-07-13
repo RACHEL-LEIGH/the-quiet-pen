@@ -1,0 +1,105 @@
+---
+layout: base.njk
+title: "Frequently Asked Questions"
+description: "Answers about The Quiet Pen's wedding vow workbook and writing services — pricing, turnaround, privacy, revisions, voice preservation, and more."
+---
+{% from "icons.njk" import plus %}
+
+{% set categories = [
+  {
+    name: "Getting Started",
+    items: [
+      { q: "What's the difference between the workbook and your writing services?", a: "The workbook is a self-guided tool — you do the writing, with prompts and structure to help. Our writing services involve a writer working directly with you, either editing something you've written (Review & Refine) or writing a first draft from your answers (Custom Writing and Signature Experience)." },
+      { q: "How do I know which option is right for me?", a: "If you enjoy writing and just need a clear process, start with the workbook. If you're short on time, feeling stuck, or want a second set of hands, one of our writing services will likely feel like a better fit. You're welcome to reach out and describe your situation — we're happy to point you in the right direction." },
+      { q: "Can I use the workbook and a writing service together?", a: "Yes, often people do. Many clients work through the workbook first to gather their thoughts, then send us their draft for a Review & Refine pass." },
+      { q: "Do you only help with weddings?", a: "Weddings are where we started, and it's where our workbook library currently lives. Our writing services already support speeches, toasts, retirement remarks, and letters for other milestones, with more guided workbooks on the way." }
+    ]
+  },
+  {
+    name: "Writing, Voice & Style",
+    items: [
+      { q: "Will the finished piece actually sound like me?", a: "That's the entire goal, and the thing we care most about getting right. For the workbook, every prompt is built around your own memories and language. For our writing services, we work from your own answers and voice, and revise until it sounds unmistakably like you — not like a generic template." },
+      { q: "What if I'm not a confident writer or speaker?", a: "You're exactly who we built this for. Most people who come to us already know what they want to say — they just haven't found a way to say it yet, or they're nervous about delivering it. That's precisely the part we help with." },
+      { q: "Do you write differently for different relationship types?", a: "We write around your relationship, not a template for 'a relationship.' Same-sex couples, blended families, second marriages, long-distance partners, chosen family — the process adapts to your story, not the other way around." },
+      { q: "Can you match a specific tone — funny, formal, emotional?", a: "Yes. Part of our questionnaire specifically asks how emotional or humorous you want the piece to feel, and we calibrate the draft to that answer." },
+      { q: "What if I want it to be funny, but I'm worried it'll come across as insincere?", a: "Humor and sincerity aren't opposites — some of the most memorable speeches use both. We help you find the balance that fits your relationship with the audience, rather than forcing a joke that doesn't feel like you." }
+    ]
+  },
+  {
+    name: "Revisions & Turnaround",
+    items: [
+      { q: "How many revisions are included?", a: "Review & Refine includes one round of editing notes. Custom Writing includes one full round of revisions. Signature Experience includes multiple rounds, so we can keep refining until it's right." },
+      { q: "What happens if I need more revisions than my package includes?", a: "Additional revision rounds can be added for a small fee. In practice, most projects land in a good place within the included rounds, especially with clear feedback." },
+      { q: "How long does it take to get my first draft?", a: "Review & Refine typically returns within 3–5 business days, Custom Writing within 5–7 business days, and Signature Experience is prioritized at 2–4 business days. Rush timelines may be available — just ask when you reach out." },
+      { q: "I have a wedding or event coming up soon. Can you still help?", a: "Often, yes. Contact us with your date and we'll let you know honestly whether we can accommodate your timeline, including any rush options." },
+      { q: "What does the revision process actually look like?", a: "You'll receive a draft, read it over (out loud is a good idea), and send us notes on what feels right and what doesn't. We revise based on your feedback — this isn't a one-shot delivery." }
+    ]
+  },
+  {
+    name: "Privacy, Confidentiality & Ownership",
+    items: [
+      { q: "Who sees what I share with you?", a: "Only the writer assigned to your project. Your answers are never shared, published, sold, or used to train or promote anything, and they're never reused for another client." },
+      { q: "Do you keep my information after the project is finished?", a: "We retain project files only as long as needed to support revisions or answer follow-up questions, per our Privacy Policy. You can request deletion at any time." },
+      { q: "Who owns the words once the project is finished?", a: "You do. Once delivered, the words are entirely yours to use, edit, print, and speak however you'd like — no attribution or credit required." },
+      { q: "Will anyone else ever hear or read what we share?", a: "No. Every project is confidential between you and your assigned writer. We don't publish client stories or examples without separate, explicit permission." }
+    ]
+  },
+  {
+    name: "Speech Length, Delivery & Speaking Anxiety",
+    items: [
+      { q: "How long should my vows or speech actually be?", a: "As a general guideline, wedding vows tend to land well between 300–500 words (roughly 2–3 minutes spoken), while toasts and speeches often run 3–5 minutes. We'll help you find the right length for your specific moment — see our full guide on the Journal for more detail." },
+      { q: "Do you help with how to actually deliver the speech, not just write it?", a: "Yes. The workbook includes a full section on practice techniques, pacing, and confidence tips, and our writing services include guidance on delivery as part of your project." },
+      { q: "I get nervous speaking in public. Can you help with that too?", a: "It's one of the most common concerns we hear, and it's completely normal. We include practical, specific techniques — not just 'take a deep breath' advice — for managing nerves before and during your speech." },
+      { q: "Will I need to memorize what's written?", a: "Not necessarily. Many clients read from notecards or a printed page, especially for vows. We can help format your piece for however you plan to deliver it." }
+    ]
+  },
+  {
+    name: "Pricing & Logistics",
+    items: [
+      { q: "How much does everything cost?", a: "The Wedding Vows Workbook is a one-time $39 download. Writing services start at $59 for Review & Refine, $149 for Custom Writing, and $299 for our Signature Experience. See our Services page for full details." },
+      { q: "Do you offer refunds?", a: "Because the workbook is an instant digital download, it's non-refundable once accessed. For writing services, please reach out if something isn't working for you — we'll always try to make it right before a project is considered final." },
+      { q: "What format will I receive my finished piece in?", a: "A clean, nicely formatted PDF you can print, save, or read from your phone. Signature Experience clients also receive a beautifully designed keepsake printable, suitable for framing or saving as a memento." },
+      { q: "Is there a limit to how many people I can share the workbook with?", a: "The workbook is licensed for personal use by the purchaser. If you'd like to gift it to someone else, we'd love for them to grab their own copy — it keeps things simple and supports the small team behind it." }
+    ]
+  }
+] %}
+
+<section class="page-hero">
+  <div class="container-narrow">
+    <p class="breadcrumb"><a href="/">Home</a> / FAQ</p>
+    <div class="section-header reveal">
+      <span class="eyebrow">Frequently Asked Questions</span>
+      <h1>Good to know, before you start.</h1>
+      <p class="lede">
+        If you don't see your question here, reach out — we're happy to talk it through before
+        you commit to anything.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container-narrow">
+    {% for category in categories %}
+    <div class="reveal" style="margin-bottom: var(--space-xl);">
+      <h2 style="font-size: 1.4rem; margin-bottom: var(--space-sm);">{{ category.name }}</h2>
+      <div>
+        {% for item in category.items %}
+        <details class="accordion-item">
+          <summary class="accordion-trigger"><span>{{ item.q }}</span>{{ plus() }}</summary>
+          <div class="accordion-panel-content">{{ item.a | safe }}</div>
+        </details>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="card text-center reveal">
+      <h3>Still have a question?</h3>
+      <p class="text-muted">We'd rather you ask before starting than wonder partway through.</p>
+      <a class="btn btn-primary" href="/contact/">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+{% faqSchema categories | flattenItems %}
