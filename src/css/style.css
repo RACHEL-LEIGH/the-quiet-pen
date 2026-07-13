@@ -320,6 +320,10 @@ p {
   color: var(--platinum);
 }
 
+.section-dark .guiding-principle {
+  color: var(--white);
+}
+
 .section-header {
   max-width: 640px;
   margin-bottom: var(--space-lg);

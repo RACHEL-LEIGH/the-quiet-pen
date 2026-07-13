@@ -1,0 +1,123 @@
+---
+layout: base.njk
+title: "Start Your Project"
+description: "Tell us about your moment — a wedding, a speech, a letter — and we'll help you find the right words. Every inquiry is confidential and no-obligation."
+---
+{% from "icons.njk" import check %}
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> / Start Your Project</p>
+    <div class="section-header reveal">
+      <span class="eyebrow">Start Your Project</span>
+      <h1>Tell us a little about your moment.</h1>
+      <p class="lede">
+        No pressure, no obligation — just a few details so we can point you toward the right
+        workbook or service, or answer whatever question is on your mind.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <!--
+          Front-end submission pattern only: on submit we show a success
+          state and a brief confetti moment. Wire this form's action to a
+          real endpoint (Netlify Forms, a CRM, etc.) before launch.
+        -->
+        <form data-inquiry-form novalidate>
+          <div class="inquiry-form-fields">
+            <div class="form-row form-row-2">
+              <div class="form-field">
+                <label for="full-name">Full name</label>
+                <input type="text" id="full-name" name="name" autocomplete="name" required />
+              </div>
+              <div class="form-field">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" autocomplete="email" required />
+              </div>
+            </div>
+
+            <div class="form-row form-row-2">
+              <div class="form-field">
+                <label for="project-interest">I'm interested in</label>
+                <select id="project-interest" name="interest">
+                  <option value="wedding-vows-workbook">Wedding Vows Workbook — $39</option>
+                  <option value="review-refine">Review &amp; Refine — $59</option>
+                  <option value="custom-writing">Custom Writing — $149</option>
+                  <option value="signature-experience">Signature Experience — $299</option>
+                  <option value="not-sure">Not sure yet</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="occasion">Occasion</label>
+                <select id="occasion" name="occasion">
+                  <option value="wedding">Wedding vows or toast</option>
+                  <option value="retirement">Retirement speech</option>
+                  <option value="graduation">Graduation speech</option>
+                  <option value="anniversary">Anniversary letter</option>
+                  <option value="eulogy">Eulogy</option>
+                  <option value="letter">Personal letter</option>
+                  <option value="other">Something else</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="story">Tell us about your moment</label>
+              <span class="hint">The occasion, your relationship, and anything you already know you want to say.</span>
+              <textarea id="story" name="story" rows="5"></textarea>
+            </div>
+
+            <div class="form-field">
+              <label for="event-date">Do you have a date you're working toward? <span class="hint" style="font-weight:400;">(optional)</span></label>
+              <input type="date" id="event-date" name="eventDate" />
+            </div>
+
+            <button class="btn btn-primary btn-block" type="submit">Send Your Inquiry</button>
+            <p class="newsletter-note text-center" style="margin-top: var(--space-sm);">
+              We respond to every inquiry within 1–2 business days.
+            </p>
+          </div>
+
+          <div class="inquiry-success" style="display:none;" role="status">
+            <div class="card text-center">
+              <h3>{{ check("icon-check") }} Thank you — that took courage.</h3>
+              <p class="text-muted">
+                We've noted everything you shared, and we'll be in touch within 1–2 business days
+                to talk next steps. In the meantime, feel free to browse the
+                <a href="/workbook/">Wedding Vows Workbook</a> or read a few
+                <a href="/blog/">articles from the Journal</a>.
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <div class="card" style="margin-bottom: var(--space-md);">
+          <h3>What happens after you submit</h3>
+          <ul class="stack" style="gap: 0.75rem; margin-top: var(--space-sm);">
+            <li class="cluster">{{ check("icon-check") }} <span>We read your inquiry carefully — no automated replies.</span></li>
+            <li class="cluster">{{ check("icon-check") }} <span>We'll follow up with next steps or a few clarifying questions.</span></li>
+            <li class="cluster">{{ check("icon-check") }} <span>Nothing is charged until you decide to move forward.</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Private, by default</h3>
+          <p class="text-muted mb-0">
+            Everything you share here is confidential. It's used only to understand your project
+            and is never shared, sold, or reused. Read more in our
+            <a href="/privacy-policy/">Privacy Policy</a>.
+          </p>
+        </div>
+        <p class="text-muted" style="margin-top: var(--space-md);">
+          Prefer email? Reach us directly at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

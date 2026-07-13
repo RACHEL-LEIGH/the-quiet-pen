@@ -118,6 +118,19 @@
     mobileCta.classList.add("is-visible");
   }
 
+  /* ---- Pre-select the "I'm interested in" option from ?product= / ?service= ---- */
+  var interestSelect = document.getElementById("project-interest");
+  if (interestSelect) {
+    var params = new URLSearchParams(window.location.search);
+    var requested = params.get("product") || params.get("service");
+    if (requested) {
+      var matched = Array.prototype.slice.call(interestSelect.options).some(function (option) {
+        return option.value === requested;
+      });
+      if (matched) interestSelect.value = requested;
+    }
+  }
+
   /* ---- Newsletter form (client-side only placeholder) ---- */
   document.querySelectorAll("[data-newsletter-form]").forEach(function (form) {
     form.addEventListener("submit", function (event) {
