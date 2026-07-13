@@ -1489,6 +1489,100 @@ html.js .reveal.is-visible {
   border: 1px dashed var(--color-border);
 }
 
+/* ---- Article prose ---- */
+.prose {
+  max-width: var(--container-narrow);
+  margin-inline: auto;
+}
+
+.prose p {
+  margin-bottom: 1.3em;
+  color: var(--color-text);
+}
+
+.prose h2 {
+  margin-top: 2.75rem;
+  font-size: 1.65rem;
+}
+
+.prose h3 {
+  margin-top: 2.25rem;
+  font-size: 1.3rem;
+}
+
+.prose ul,
+.prose ol {
+  margin: 1.3em 0 1.5em;
+  padding-left: 1.4em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.prose ul {
+  list-style: disc;
+}
+
+.prose ol {
+  list-style: decimal;
+}
+
+.prose li {
+  color: var(--color-text);
+}
+
+.prose blockquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-left: 3px solid var(--sage);
+  padding-left: 1.4rem;
+  margin: 2.25rem 0;
+  color: var(--charcoal);
+}
+
+.prose a {
+  color: var(--charcoal);
+  text-decoration: underline;
+  text-decoration-color: var(--eucalyptus);
+  text-underline-offset: 3px;
+}
+
+.prose a:hover {
+  color: var(--sage);
+}
+
+.prose strong {
+  font-weight: 600;
+}
+
+.article-header {
+  max-width: var(--container-narrow);
+  margin-inline: auto;
+  margin-bottom: var(--space-xl);
+}
+
+.article-meta {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-md);
+}
+
+.article-cta {
+  max-width: var(--container-narrow);
+  margin: var(--space-2xl) auto 0;
+  background: var(--beige);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  text-align: center;
+}
+
 /* ---- Utility ---- */
 .mt-0 {
   margin-top: 0;

@@ -13,6 +13,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("flattenItems", (categories) =>
     categories.reduce((all, category) => all.concat(category.items), [])
   );
+  eleventyConfig.addFilter("relatedPosts", (posts, currentTitle, limit) =>
+    posts.filter((post) => post.data.title !== currentTitle).slice(0, limit || 3)
+  );
 
   eleventyConfig.addCollection("blogPosts", (collectionApi) =>
     collectionApi.getFilteredByGlob("src/blog/*.njk").sort((a, b) => b.date - a.date)

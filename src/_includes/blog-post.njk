@@ -1,0 +1,63 @@
+---
+layout: base.njk
+---
+{% from "icons.njk" import arrowRight %}
+
+<article>
+  <section class="page-hero">
+    <div class="container-narrow">
+      <p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Journal</a> / {{ title }}</p>
+      <div class="article-header reveal" style="margin-bottom: 0;">
+        <span class="eyebrow">{{ category | default("From the Journal") }}</span>
+        <h1>{{ title }}</h1>
+        <div class="article-meta">
+          <span>{{ readTime | default("5 min read") }}</span>
+        </div>
+        <p class="lede">{{ description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="prose reveal">
+        {{ content | safe }}
+      </div>
+
+      <div class="article-cta reveal">
+        <h3>Ready to put this into practice?</h3>
+        <p class="text-muted">
+          The Wedding Vows Workbook walks you through this step by step, or our writers can help
+          you shape it directly.
+        </p>
+        <div class="cluster" style="justify-content: center;">
+          <a class="btn btn-primary" href="/workbook/">Browse the Workbook</a>
+          <a class="btn btn-secondary" href="/services/">Explore Writing Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header center reveal">
+        <span class="eyebrow" style="justify-content:center;">More from the Journal</span>
+      </div>
+      <div class="grid grid-3">
+        {% from "icons.njk" import featherIllustration %}
+        {% for post in collections.blogPosts | relatedPosts(title, 3) %}
+          <div class="blog-card reveal reveal-delay-{{ loop.index }}">
+            <a class="blog-card-image" href="{{ post.url }}" aria-hidden="true" tabindex="-1">
+              {{ featherIllustration() }}
+            </a>
+            <span class="blog-meta">{{ post.data.category | default("Journal") }}</span>
+            <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+            <p class="text-muted">{{ post.data.description }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</article>
+
+{% articleSchema { title: title, description: description, date: date } %}
