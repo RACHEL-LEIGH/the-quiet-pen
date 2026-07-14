@@ -4,7 +4,7 @@ module.exports = {
   url: "https://thequietpen.com",
   email: "hello@thequietpen.com",
   description:
-    "The Quiet Pen is a premium writing studio that helps people find the right words for life's biggest moments — starting with wedding vows, and expanding into speeches, letters, and keepsake writing.",
+    "The Quiet Pen helps people find the right words for life's biggest moments — starting with wedding vows, and expanding into speeches, letters, and keepsake writing.",
   guidingPrinciple:
     "The best writing doesn't sound like it was written by someone else. It sounds like it was always yours.",
   nav: [
@@ -15,7 +15,7 @@ module.exports = {
     { label: "FAQ", href: "/faq/" },
   ],
   footerLinks: {
-    studio: [
+    explore: [
       { label: "Our Philosophy", href: "/about/" },
       { label: "Writing Services", href: "/services/" },
       { label: "Wedding Vows Workbook", href: "/workbook/" },

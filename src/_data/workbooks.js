@@ -48,28 +48,4 @@ module.exports = [
     description: "For the milestone that deserves more than a few notecards.",
     status: "coming-soon",
   },
-  {
-    slug: "proposal",
-    title: "The Proposal Workbook",
-    description: "Finding the words for the question that starts everything.",
-    status: "coming-soon",
-  },
-  {
-    slug: "anniversary-letter",
-    title: "The Anniversary Letter Workbook",
-    description: "A yearly tradition of writing down what you'd otherwise just feel.",
-    status: "coming-soon",
-  },
-  {
-    slug: "eulogy",
-    title: "The Eulogy Guide",
-    description: "Gentle, practical help for one of the hardest things you'll ever write.",
-    status: "coming-soon",
-  },
-  {
-    slug: "letter-to-my-child",
-    title: "The Letter to My Child Workbook",
-    description: "For the things you want them to read someday, in your own words.",
-    status: "coming-soon",
-  },
 ];
