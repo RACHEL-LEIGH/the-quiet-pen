@@ -1,0 +1,206 @@
+---
+layout: base.njk
+title: "The Wedding Vows Workbook — A Guided Writing Experience"
+description: "Write wedding vows you'll actually want to say. A guided workbook of prompts, worksheets, and editing tools that help you discover vows that sound like you — not a template to copy."
+---
+{% from "icons.njk" import check, arrowRight, plus %}
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> / Wedding Vows Workbook</p>
+    <div class="two-col">
+      <div class="reveal">
+        <span class="eyebrow">Our Flagship Guide &middot; Instant Digital Download</span>
+        <h1>Write Wedding Vows You'll Actually Want to Say</h1>
+        <p class="lede">
+          This is a guided writing experience, not a shortcut. You'll still do the writing —
+          we've simply built the clearest, calmest path from "I don't know where to start" to
+          vows that sound unmistakably like you.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/contact/?product=wedding-vows-workbook">Get the Workbook — $39</a>
+          <a class="btn btn-secondary" href="#inside">See What's Inside</a>
+        </div>
+        <p class="text-muted" style="margin-top: var(--space-md); font-size: 0.88rem;">
+          Instant PDF download &middot; 60+ pages &middot; Printable worksheets &middot; Lifetime access to updates
+        </p>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="preview-gallery">
+          <div class="preview-page">
+            <span class="badge badge-accent">Cover</span>
+            <div style="flex-grow:1; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.5rem;">
+              <span class="serif-italic" style="font-size:1.1rem; text-align:center;">The Wedding<br>Vows Workbook</span>
+              <span class="text-muted" style="font-size:0.78rem;">A Guided Writing Experience</span>
+            </div>
+          </div>
+          <div class="preview-page">
+            <span class="badge">04 &middot; Meaningful Promises</span>
+            <div class="preview-line" style="margin-top:1rem;"></div>
+            <div class="preview-line"></div>
+            <div class="preview-line short"></div>
+            <div class="preview-line tall"></div>
+            <span class="preview-page-label">Worksheet: What are you actually promising?</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight section-alt">
+  <div class="container">
+    <div class="grid grid-3">
+      <div class="reveal">
+        <h4>{{ check("icon-check") }} Not a copy-paste template</h4>
+        <p class="text-muted mb-0">Every prompt is designed to pull out your story — not hand you someone else's words.</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <h4>{{ check("icon-check") }} Built for non-writers</h4>
+        <p class="text-muted mb-0">No writing background required. Just honest answers to thoughtful questions.</p>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <h4>{{ check("icon-check") }} Works for any couple</h4>
+        <p class="text-muted mb-0">Any tone, any tradition, any relationship — the structure adapts to you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="inside">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="eyebrow" style="justify-content:center;">What's Inside</span>
+      <h2>Fourteen sections, one calm process.</h2>
+      <p class="lede" style="margin-inline:auto;">
+        Work through it in order, or jump to whatever you're stuck on. Either way, it's built to
+        meet you where you are.
+      </p>
+    </div>
+    <div class="grid grid-3">
+      {% set sections = [
+        { n: "01", title: "Finding Your Story", desc: "Prompts to uncover the memories worth building your vows around." },
+        { n: "02", title: "Brainstorming Prompts", desc: "Get words on the page before you worry about getting them right." },
+        { n: "03", title: "Choosing Your Tone", desc: "Playful, solemn, or somewhere in between — decide before you draft." },
+        { n: "04", title: "Favorite Memories", desc: "A structured worksheet for the moments you keep coming back to." },
+        { n: "05", title: "Meaningful Promises", desc: "Move past 'I promise to always...' into promises you'll actually keep." },
+        { n: "06", title: "Finding Your Voice", desc: "How to tell if a line sounds like you — or like a greeting card." },
+        { n: "07", title: "Editing Checklist", desc: "A simple pass to tighten your draft without losing its warmth." },
+        { n: "08", title: "Common Mistakes", desc: "The five things that make vows feel borrowed instead of personal." },
+        { n: "09", title: "Reading Time Guide", desc: "How to estimate your speaking length before the big day." },
+        { n: "10", title: "Practice Techniques", desc: "How to rehearse without sounding rehearsed." },
+        { n: "11", title: "Confidence Tips", desc: "Practical ways to steady your nerves in the minutes before you speak." },
+        { n: "12", title: "Printable Worksheets", desc: "Every prompt, ready to fill in by hand if that's how you think best." },
+        { n: "13", title: "Reflection Pages", desc: "Space to sit with your answers before turning them into vows." },
+        { n: "14", title: "Revision Checklist", desc: "A final read-through, line by line, before you say it out loud." }
+      ] %}
+      {% for s in sections %}
+      <div class="card reveal reveal-delay-{{ loop.index0 % 4 + 1 }}">
+        <span class="badge">{{ s.n }}</span>
+        <h3 style="margin-top: 0.75rem;">{{ s.title }}</h3>
+        <p class="text-muted mb-0">{{ s.desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="two-col reverse">
+      <div class="reveal">
+        <div class="preview-gallery">
+          <div class="preview-page">
+            <span class="badge">08 &middot; Common Mistakes</span>
+            <div class="preview-line" style="margin-top:1rem;"></div>
+            <div class="preview-line short"></div>
+            <div class="preview-line"></div>
+            <div class="preview-line short"></div>
+            <span class="preview-page-label">Checklist: Five phrases to reconsider</span>
+          </div>
+          <div class="preview-page">
+            <span class="badge">14 &middot; Revision Checklist</span>
+            <div class="preview-line" style="margin-top:1rem;"></div>
+            <div class="preview-line"></div>
+            <div class="preview-line short"></div>
+            <div class="preview-line tall"></div>
+            <span class="preview-page-label">Read it aloud. Does it sound like you?</span>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <span class="eyebrow">A Guide, Not a Cheat Sheet</span>
+        <h2>You'll still write every word. That's the point.</h2>
+        <p class="text-muted">
+          We won't pretend this is a shortcut, because it isn't one — and we don't think you'd
+          want it to be. Vows written for you tend to sound like it. This workbook exists to make
+          the writing easier, not to do it for you.
+        </p>
+        <p class="text-muted">
+          You already have the feelings. The prompts inside are built to help you notice them,
+          organize them, and put them into your own words — with enough structure that you never
+          feel like you're starting from a blank page.
+        </p>
+        <a class="btn btn-secondary" href="/services/">Prefer more hands-on help? See our writing services {{ arrowRight("icon-arrow") }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container-narrow text-center">
+    <div class="reveal">
+      <span class="eyebrow" style="justify-content:center;">Get the Workbook</span>
+      <h2>One workbook. One price. Yours for good.</h2>
+    </div>
+    <div class="pricing-card reveal reveal-delay-1" style="max-width: 420px; margin: var(--space-lg) auto 0;">
+      <h3>The Wedding Vows Workbook</h3>
+      <p class="pricing-card-price">$39</p>
+      <p class="pricing-card-desc">One-time purchase. Instant PDF download.</p>
+      <ul class="pricing-card-features">
+        <li>{{ check() }} 60+ pages of prompts and worksheets</li>
+        <li>{{ check() }} Printable and fillable-on-screen formats</li>
+        <li>{{ check() }} Editing checklist and common-mistakes guide</li>
+        <li>{{ check() }} Free access to future workbook updates</li>
+      </ul>
+      <a class="btn btn-primary btn-block" href="/contact/?product=wedding-vows-workbook">Get the Workbook</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container-narrow">
+    <div class="section-header center reveal">
+      <span class="eyebrow" style="justify-content:center;">Workbook FAQ</span>
+      <h2>A few things people ask first.</h2>
+    </div>
+    <div class="reveal">
+      <details class="accordion-item" name="workbook-faq">
+        <summary class="accordion-trigger"><span>Do I need to be a good writer to use this?</span>{{ plus() }}</summary>
+        <div class="accordion-panel-content">Not at all. The workbook is built for people who know how they feel but haven't found the words yet — that's most of us. Every section breaks the process into small, manageable steps.</div>
+      </details>
+      <details class="accordion-item" name="workbook-faq">
+        <summary class="accordion-trigger"><span>Will this work for a non-traditional wedding?</span>{{ plus() }}</summary>
+        <div class="accordion-panel-content">Yes. The prompts focus on your relationship and your story, not on a specific tradition or format, so they adapt naturally to any couple, culture, or ceremony style.</div>
+      </details>
+      <details class="accordion-item" name="workbook-faq">
+        <summary class="accordion-trigger"><span>What if I get stuck partway through?</span>{{ plus() }}</summary>
+        <div class="accordion-panel-content">That's normal, and the workbook is designed for it — you can skip ahead and come back. If you'd like a person to help you push through, our <a href="/services/">Review &amp; Refine service</a> picks up right where the workbook leaves off.</div>
+      </details>
+      <details class="accordion-item" name="workbook-faq">
+        <summary class="accordion-trigger"><span>How is this different from just Googling "wedding vow examples"?</span>{{ plus() }}</summary>
+        <div class="accordion-panel-content">Example vows are written for someone else's relationship. This workbook doesn't give you lines to borrow — it gives you a process for finding your own, so what you say actually sounds like you.</div>
+      </details>
+    </div>
+    <div class="text-center reveal" style="margin-top: var(--space-lg);">
+      <a class="btn btn-secondary" href="/faq/">Read All FAQs</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container-narrow text-center reveal">
+    <p class="guiding-principle">"You already have the feelings. We simply help you express them."</p>
+    <a class="btn btn-primary" style="margin-top: var(--space-lg);" href="/contact/?product=wedding-vows-workbook">Get the Workbook — $39</a>
+  </div>
+</section>

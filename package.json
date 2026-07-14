@@ -1,0 +1,14 @@
+{
+  "name": "the-quiet-pen",
+  "version": "1.0.0",
+  "description": "The Quiet Pen — a premium writing studio helping people find the right words for life's biggest moments.",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "start": "eleventy --serve"
+  },
+  "private": "true",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

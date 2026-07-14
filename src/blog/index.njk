@@ -1,0 +1,49 @@
+---
+layout: base.njk
+title: "The Journal"
+description: "Thoughtful, practical writing advice from The Quiet Pen — on wedding vows, speeches, toasts, and finding the words for life's biggest moments."
+eleventyExcludeFromCollections: true
+---
+{% from "icons.njk" import featherIllustration %}
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> / Journal</p>
+    <div class="section-header reveal">
+      <span class="eyebrow">The Journal</span>
+      <h1>Thoughtful answers, not finished speeches.</h1>
+      <p class="lede">
+        We'd rather teach you something useful than hand you a script to copy. Here's what we've
+        learned about writing for the moments that matter most.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="grid grid-3">
+      {% for post in collections.blogPosts %}
+      <div class="blog-card reveal reveal-delay-{{ loop.index0 % 4 + 1 }}">
+        <a class="blog-card-image" href="{{ post.url }}" aria-hidden="true" tabindex="-1">
+          {{ featherIllustration() }}
+        </a>
+        <span class="blog-meta">{{ post.data.category | default("Journal") }} &middot; {{ post.data.readTime }}</span>
+        <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+        <p class="text-muted">{{ post.data.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container-narrow text-center reveal">
+    <span class="eyebrow" style="justify-content:center;">Want More Than an Article?</span>
+    <h2>Some things are easier with a guide, or a second pair of eyes.</h2>
+    <div class="cluster" style="justify-content:center; margin-top: var(--space-md);">
+      <a class="btn btn-primary" href="/workbook/">Browse the Workbook</a>
+      <a class="btn btn-secondary" href="/services/">Explore Writing Services</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,372 @@
+---
+layout: base.njk
+title: "The Right Words for Life's Biggest Moments"
+description: "The Quiet Pen helps you write wedding vows, speeches, and letters that sound like you — through guided workbooks and thoughtful, human editing. Your voice, quietly supported."
+---
+{% from "icons.njk" import check, arrowRight, featherIllustration, quoteMark, plus %}
+
+<section class="hero" data-hero>
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">A Writing Studio for Meaningful Moments</span>
+      <h1>The right words for life's biggest moments.</h1>
+      <p class="lede">
+        Whether you're promising forever, raising a glass, honoring a career, celebrating someone
+        you love, or saying goodbye, The Quiet Pen helps you express what matters most — in your
+        own voice.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/workbook/">Browse Wedding Workbook</a>
+        <a class="btn btn-secondary" href="/services/">Explore Writing Services</a>
+      </div>
+    </div>
+    <div class="hero-art reveal reveal-delay-2" aria-hidden="true">
+      {{ featherIllustration() }}
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="reveal">
+        <span class="stat-number" data-count-to="500" data-suffix="+">0</span>
+        <span class="stat-label">Vows &amp; speeches written</span>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <span class="stat-number" data-count-to="4.9" data-suffix="/5">0</span>
+        <span class="stat-label">Average client rating</span>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <span class="stat-number" data-count-to="3" data-suffix="+">0</span>
+        <span class="stat-label">Revision rounds included</span>
+      </div>
+      <div class="reveal reveal-delay-3">
+        <span class="stat-number" data-count-to="100" data-suffix="%">0</span>
+        <span class="stat-label">Written in your own voice</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="workbook-spotlight">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <span class="eyebrow">Our Flagship Guide</span>
+        <h2>Write Wedding Vows You'll Actually Want to Say</h2>
+        <p class="lede">
+          This isn't a collection of vows to copy. It's a guided writing experience —
+          worksheets, prompts, and gentle structure that help you discover the vows only you
+          could have written, then say them with confidence.
+        </p>
+        <ul class="stack" style="gap: 0.6rem; margin: var(--space-md) 0;">
+          <li class="cluster">{{ check("icon-check") }} <span>Brainstorming prompts that surface real memories</span></li>
+          <li class="cluster">{{ check("icon-check") }} <span>A tone-and-voice guide, so it sounds like you</span></li>
+          <li class="cluster">{{ check("icon-check") }} <span>Printable worksheets and a step-by-step editing checklist</span></li>
+        </ul>
+        <a class="btn btn-primary" href="/workbook/">See Inside the Workbook {{ arrowRight("icon-arrow") }}</a>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="preview-gallery">
+          <div class="preview-page">
+            <span class="badge">01 &middot; Finding Your Story</span>
+            <div class="preview-line" style="margin-top:1rem;"></div>
+            <div class="preview-line short"></div>
+            <div class="preview-line tall"></div>
+            <span class="preview-page-label">Prompt: What moment made you certain?</span>
+          </div>
+          <div class="preview-page">
+            <span class="badge">06 &middot; Finding Your Voice</span>
+            <div class="preview-line" style="margin-top:1rem;"></div>
+            <div class="preview-line short"></div>
+            <div class="preview-line tall"></div>
+            <span class="preview-page-label">Worksheet: Say it out loud, then write it down</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="future-workbooks">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="eyebrow" style="justify-content:center;">Life's Biggest Moments</span>
+      <h2>One studio, for every moment worth writing about.</h2>
+      <p class="lede" style="margin-inline:auto;">
+        Weddings are where we started. These guided workbooks are on their way next — each one
+        built with the same care.
+      </p>
+    </div>
+    <div class="grid grid-4">
+      {% for book in workbooks %}
+      <div class="book-card reveal reveal-delay-{{ loop.index0 % 4 + 1 }}">
+        {% if book.status == "available" %}
+          <a href="{{ book.href }}" aria-label="{{ book.title }}">
+            <div class="book-cover is-flagship">
+              <div class="book-cover-inner">
+                <svg class="book-cover-mark" viewBox="0 0 32 32" fill="none"><path d="M8 24 L22 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                <div class="book-cover-title">{{ book.title }}</div>
+              </div>
+            </div>
+          </a>
+        {% else %}
+          <div class="book-cover">
+            <div class="book-cover-inner">
+              <svg class="book-cover-mark" viewBox="0 0 32 32" fill="none"><path d="M8 24 L22 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <div class="book-cover-title">{{ book.title }}</div>
+            </div>
+          </div>
+        {% endif %}
+        <div class="book-meta">
+          {% if book.status == "available" %}
+            <span class="badge badge-accent">Available Now</span>
+          {% else %}
+            <span class="badge">Coming Soon</span>
+          {% endif %}
+          <h3>{{ book.title }}</h3>
+          <p>{{ book.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="services-teaser">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="eyebrow" style="justify-content:center;">Writing Services</span>
+      <h2>Sometimes you want a guide. Sometimes you want a hand.</h2>
+      <p class="lede" style="margin-inline:auto;">
+        For moments that call for more than a workbook, our writers work directly with you —
+        listening carefully, then helping you shape what you already know you want to say.
+      </p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal">
+        <h3>Review &amp; Refine</h3>
+        <p class="text-muted">You've written a draft. We help with grammar, flow, clarity, and
+          emotional impact — without losing your voice.</p>
+        <a href="/services/#review-refine">Learn more {{ arrowRight("icon-arrow") }}</a>
+      </div>
+      <div class="card reveal reveal-delay-1">
+        <h3>Custom Writing</h3>
+        <p class="text-muted">A guided questionnaire, one writer, and a piece crafted from
+          scratch in your voice — with a full revision included.</p>
+        <a href="/services/#custom-writing">Learn more {{ arrowRight("icon-arrow") }}</a>
+      </div>
+      <div class="card reveal reveal-delay-2">
+        <h3>Signature Experience</h3>
+        <p class="text-muted">Our most thorough offering: a consultation, multiple revisions,
+          priority turnaround, and a keepsake printable.</p>
+        <a href="/services/#signature-experience">Learn more {{ arrowRight("icon-arrow") }}</a>
+      </div>
+    </div>
+    <div class="text-center reveal" style="margin-top: var(--space-lg);">
+      <a class="btn btn-secondary" href="/services/">Compare All Services</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="eyebrow" style="justify-content:center;">Our Process</span>
+      <h2>Quiet, careful, and entirely yours.</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-step reveal">
+        <h4>Share your story</h4>
+        <p class="text-muted">A short questionnaire or a conversation — however you'd rather tell it.</p>
+      </div>
+      <div class="timeline-step reveal reveal-delay-1">
+        <h4>We listen carefully</h4>
+        <p class="text-muted">We read between the lines for the details that actually matter to you.</p>
+      </div>
+      <div class="timeline-step reveal reveal-delay-2">
+        <h4>We thoughtfully write</h4>
+        <p class="text-muted">A first draft, written to sound like you on your most articulate day.</p>
+      </div>
+      <div class="timeline-step reveal">
+        <h4>You review</h4>
+        <p class="text-muted">Read it aloud. Sit with it. Tell us what feels off, if anything does.</p>
+      </div>
+      <div class="timeline-step reveal reveal-delay-1">
+        <h4>Together we refine</h4>
+        <p class="text-muted">We adjust tone, trim length, and sharpen the moments that matter most.</p>
+      </div>
+      <div class="timeline-step reveal reveal-delay-2">
+        <h4>You confidently speak</h4>
+        <p class="text-muted">The words are ready. So are you. The moment is entirely yours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="philosophy">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <span class="eyebrow">Our Philosophy</span>
+        <h2>Words often outlive the moment.</h2>
+        <p class="text-muted">
+          A wedding video gets watched a few times. A retirement toast gets mentioned at family
+          dinners for years. A letter gets kept in a drawer and re-read on hard days. The moments
+          themselves pass quickly — the words spoken during them tend to stay.
+        </p>
+        <p class="text-muted">
+          That's why we treat this work carefully. Not because the writing should sound
+          impressive, but because it should sound like <em>you</em>, on a day when it counted.
+        </p>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <p class="guiding-principle">
+          "{{ site.guidingPrinciple }}"
+        </p>
+        <p class="text-muted" style="margin-top: var(--space-md);">
+          You already have the feelings. We simply help you express them. Our goal isn't to
+          replace your voice — it's to help you discover it.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="eyebrow" style="justify-content:center;">In Their Words</span>
+      <h2>The best compliment we receive: "That sounded exactly like me."</h2>
+    </div>
+    <div class="grid grid-3">
+      {% for t in testimonials %}
+      {% if loop.index <= 3 %}
+      <div class="testimonial-card reveal reveal-delay-{{ loop.index }}">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="testimonial-quote">{{ quoteMark("icon-quote") }}{{ t.quote }}</p>
+        <div class="testimonial-person">
+          <div class="avatar-placeholder" style="background: var(--{{ t.color }});">{{ t.initials }}</div>
+          <div>
+            <div class="testimonial-name">{{ t.name }}</div>
+            <div class="testimonial-detail">{{ t.detail }}</div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="sample-advice">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="eyebrow" style="justify-content:center;">From the Journal</span>
+      <h2>Thoughtful answers, not finished speeches.</h2>
+      <p class="lede" style="margin-inline:auto;">
+        We'd rather teach you something useful than hand you a script. A few places to start:
+      </p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal">
+        <h3><a href="/blog/how-long-should-wedding-vows-be/">How Long Should Wedding Vows Be?</a></h3>
+        <p class="text-muted">The honest answer, plus how to tell if yours are running long.</p>
+      </div>
+      <div class="card reveal reveal-delay-1">
+        <h3><a href="/blog/how-to-write-a-speech-that-sounds-like-you/">Writing a Speech That Sounds Like You</a></h3>
+        <p class="text-muted">A practical approach to finding your own voice on paper.</p>
+      </div>
+      <div class="card reveal reveal-delay-2">
+        <h3><a href="/blog/biggest-mistakes-wedding-speakers-make/">The Biggest Mistakes Wedding Speakers Make</a></h3>
+        <p class="text-muted">And the simple fixes for each one.</p>
+      </div>
+    </div>
+    <div class="text-center reveal" style="margin-top: var(--space-lg);">
+      <a class="btn btn-secondary" href="/blog/">Visit the Journal</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq-preview">
+  <div class="container-narrow">
+    <div class="section-header center reveal">
+      <span class="eyebrow" style="justify-content:center;">Common Questions</span>
+      <h2>Good to know before you start.</h2>
+    </div>
+    <div class="reveal">
+      <details class="accordion-item" name="faq-preview">
+        <summary class="accordion-trigger">
+          <span>Will my vows actually sound like me?</span>
+          {{ plus() }}
+        </summary>
+        <div class="accordion-panel-content">
+          That's the entire point. The workbook is built around your memories, your words, and
+          your way of speaking — we never hand you generic lines to copy. If you work with a
+          writer directly, every draft is built from your own answers and revised until it
+          sounds unmistakably like you.
+        </div>
+      </details>
+      <details class="accordion-item" name="faq-preview">
+        <summary class="accordion-trigger">
+          <span>I'm not a good writer. Will that be a problem?</span>
+          {{ plus() }}
+        </summary>
+        <div class="accordion-panel-content">
+          Not at all — that's exactly who we built this for. Most people who come to us
+          already know what they want to say; they just haven't found a way to put it into
+          words yet. That's the part we help with.
+        </div>
+      </details>
+      <details class="accordion-item" name="faq-preview">
+        <summary class="accordion-trigger">
+          <span>Is this only for weddings?</span>
+          {{ plus() }}
+        </summary>
+        <div class="accordion-panel-content">
+          Weddings are where we started, and where our workbook library lives today. Our
+          writing services already support speeches, toasts, and letters for other
+          milestones, with more guided workbooks on the way.
+        </div>
+      </details>
+      <details class="accordion-item" name="faq-preview">
+        <summary class="accordion-trigger">
+          <span>How private is this process?</span>
+          {{ plus() }}
+        </summary>
+        <div class="accordion-panel-content">
+          Completely. Everything you share is confidential, used only to write your piece,
+          and never shared, published, or reused without your permission.
+        </div>
+      </details>
+    </div>
+    <div class="text-center reveal" style="margin-top: var(--space-lg);">
+      <a class="btn btn-secondary" href="/faq/">Read All FAQs</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="newsletter reveal" data-newsletter-form-wrapper>
+      <div>
+        <span class="eyebrow" style="color: var(--eucalyptus);">Stay in Touch</span>
+        <h2>Thoughtful writing advice, sent occasionally.</h2>
+        <p class="text-muted mb-0">
+          No noise, no daily emails — just useful guidance on writing for the moments that matter,
+          plus a first look when new workbooks launch.
+        </p>
+      </div>
+      <div>
+        <form class="newsletter-form" data-newsletter-form>
+          <label class="sr-only" for="newsletter-email">Email address</label>
+          <input type="email" id="newsletter-email" name="email" placeholder="you@email.com" required />
+          <button class="btn btn-accent" type="submit">Subscribe</button>
+        </form>
+        <p class="newsletter-note">We respect your inbox. Unsubscribe anytime.</p>
+        <p class="form-success" role="status">{{ check() }} You're on the list — welcome.</p>
+      </div>
+    </div>
+  </div>
+</section>
