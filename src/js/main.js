@@ -118,17 +118,23 @@
     mobileCta.classList.add("is-visible");
   }
 
-  /* ---- Pre-select the "I'm interested in" option from ?product= / ?service= ---- */
-  var interestSelect = document.getElementById("project-interest");
-  if (interestSelect) {
-    var params = new URLSearchParams(window.location.search);
-    var requested = params.get("product") || params.get("service");
-    if (requested) {
-      var matched = Array.prototype.slice.call(interestSelect.options).some(function (option) {
-        return option.value === requested;
-      });
-      if (matched) interestSelect.value = requested;
-    }
+  /* ---- Flag short-notice dates on the contact form ---- */
+  var eventDateInput = document.getElementById("event-date");
+  var dateNotice = document.getElementById("date-notice");
+  if (eventDateInput && dateNotice) {
+    var checkEventDate = function () {
+      if (!eventDateInput.value) {
+        dateNotice.classList.remove("is-visible");
+        return;
+      }
+      var selected = new Date(eventDateInput.value + "T00:00:00");
+      var today = new Date();
+      today.setHours(0, 0, 0, 0);
+      var daysAway = Math.round((selected - today) / 86400000);
+      dateNotice.classList.toggle("is-visible", daysAway >= 0 && daysAway < 7);
+    };
+    eventDateInput.addEventListener("change", checkEventDate);
+    eventDateInput.addEventListener("input", checkEventDate);
   }
 
   /* ---- Newsletter form (client-side only placeholder) ---- */
