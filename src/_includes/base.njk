@@ -50,9 +50,7 @@
   <header class="site-header">
     <div class="container nav-bar">
       <a class="brand" href="/">
-        {% from "icons.njk" import brandMark %}
-        {{ brandMark("brand-mark") }}
-        <span>{{ site.name }}</span>
+        <img class="brand-logo" src="/images/logo.png" alt="{{ site.name }}" width="366" height="199" />
       </a>
 
       <nav class="nav-links" aria-label="Primary">
@@ -87,16 +85,15 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a class="brand" href="/">
-            {{ brandMark("brand-mark") }}
-            <span>{{ site.name }}</span>
+            <img class="brand-logo brand-logo-lg" src="/images/logo.png" alt="{{ site.name }}" width="366" height="199" />
           </a>
           <p class="text-muted">{{ site.tagline }}</p>
           <p class="serif-italic text-muted">"{{ site.guidingPrinciple }}"</p>
         </div>
         <div class="footer-cols">
           <div class="footer-col">
-            <h4>Studio</h4>
-            {% for link in site.footerLinks.studio %}
+            <h4>Explore</h4>
+            {% for link in site.footerLinks.explore %}
               <a href="{{ link.href }}">{{ link.label }}</a>
             {% endfor %}
           </div>
