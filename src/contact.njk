@@ -1,27 +1,30 @@
 ---
 layout: base.njk
-title: "Start Your Project"
-description: "Tell us about your moment — a wedding, a speech, a letter — and we'll help you find the right words. Every inquiry is confidential and no-obligation."
+title: "Contact Us"
+description: "Have a question about our workbooks or writing services? Send us a note — every inquiry is confidential and there's no obligation to buy."
 ---
 {% from "icons.njk" import check %}
 
 <section class="page-hero">
   <div class="container">
-    <p class="breadcrumb"><a href="/">Home</a> / Start Your Project</p>
+    <p class="breadcrumb"><a href="/">Home</a> / Contact Us</p>
     <div class="section-header reveal">
-      <span class="eyebrow">Start Your Project</span>
+      <span class="eyebrow">Contact Us</span>
       <h1>Tell us a little about your moment.</h1>
       <p class="lede">
-        No pressure, no obligation — just a few details so we can point you toward the right
-        workbook or service, or answer whatever question is on your mind.
+        No pressure, no obligation — just a quick note so we can answer your question or point
+        you toward the right workbook or service.
       </p>
+    </div>
+    <div class="hero-banner reveal reveal-delay-1">
+      <img src="/images/contact-hero.jpg" alt="Wedding guests raising a toast at a candlelit reception" width="1800" height="1013" />
     </div>
   </div>
 </section>
 
 <section class="section-tight">
   <div class="container">
-    <div class="two-col">
+    <div class="two-col align-start">
       <div class="reveal">
         <!--
           Front-end submission pattern only: on submit we show a success
@@ -43,16 +46,6 @@ description: "Tell us about your moment — a wedding, a speech, a letter — an
 
             <div class="form-row form-row-2">
               <div class="form-field">
-                <label for="project-interest">I'm interested in</label>
-                <select id="project-interest" name="interest">
-                  <option value="wedding-vows-workbook">Wedding Vows Workbook — $39</option>
-                  <option value="refine">Refine — $59</option>
-                  <option value="write">Write — $149</option>
-                  <option value="special-request">Special Request — $299</option>
-                  <option value="not-sure">Not sure yet</option>
-                </select>
-              </div>
-              <div class="form-field">
                 <label for="occasion">Occasion</label>
                 <select id="occasion" name="occasion">
                   <option value="wedding">Wedding vows or toast</option>
@@ -63,17 +56,20 @@ description: "Tell us about your moment — a wedding, a speech, a letter — an
                   <option value="other">Something else</option>
                 </select>
               </div>
+              <div class="form-field">
+                <label for="event-date">Do you have a date you're working toward? <span class="hint" style="font-weight:400;">(optional)</span></label>
+                <input type="date" id="event-date" name="eventDate" />
+                <p class="date-notice" id="date-notice" role="status">
+                  <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 6v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.4"/></svg>
+                  <span>That's coming up soon! Some of our packages need more lead time than that, so a priority turnaround add-on may be a good idea — we'll go over timing together once we hear from you.</span>
+                </p>
+              </div>
             </div>
 
             <div class="form-field">
-              <label for="story">Tell us about your moment</label>
-              <span class="hint">The occasion, your relationship, and anything you already know you want to say.</span>
-              <textarea id="story" name="story" rows="5"></textarea>
-            </div>
-
-            <div class="form-field">
-              <label for="event-date">Do you have a date you're working toward? <span class="hint" style="font-weight:400;">(optional)</span></label>
-              <input type="date" id="event-date" name="eventDate" />
+              <label for="story">How can we help?</label>
+              <span class="hint">A quick note is plenty — we'll follow up with next steps.</span>
+              <textarea id="story" name="story" rows="4"></textarea>
             </div>
 
             <button class="btn btn-primary btn-block" type="submit">Send Your Inquiry</button>
@@ -113,9 +109,6 @@ description: "Tell us about your moment — a wedding, a speech, a letter — an
             <a href="/privacy-policy/">Privacy Policy</a>.
           </p>
         </div>
-        <p class="text-muted" style="margin-top: var(--space-md);">
-          Prefer email? Reach us directly at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
-        </p>
       </div>
     </div>
   </div>
