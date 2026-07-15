@@ -44,32 +44,31 @@ description: "Have a question about our workbooks or writing services? Send us a
               </div>
             </div>
 
-            <div class="form-row form-row-2">
-              <div class="form-field">
-                <label for="occasion">Occasion</label>
-                <select id="occasion" name="occasion">
-                  <option value="wedding">Wedding vows or toast</option>
-                  <option value="retirement">Retirement speech</option>
-                  <option value="graduation">Graduation speech</option>
-                  <option value="letter">Personal letter</option>
-                  <option value="special-request">Anniversary speech, proposal, eulogy, or other special request</option>
-                  <option value="other">Something else</option>
-                </select>
-              </div>
-              <div class="form-field">
-                <label for="event-date">Do you have a date you're working toward? <span class="hint" style="font-weight:400;">(optional)</span></label>
-                <input type="date" id="event-date" name="eventDate" />
-                <p class="date-notice" id="date-notice" role="status">
-                  <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 6v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.4"/></svg>
-                  <span>That's coming up soon! Some of our packages need more lead time than that, so a priority turnaround add-on may be a good idea — we'll go over timing together once we hear from you.</span>
-                </p>
-              </div>
+            <div class="form-field">
+              <label for="occasion">Occasion</label>
+              <select id="occasion" name="occasion">
+                <option value="wedding">Wedding vows or toast</option>
+                <option value="retirement">Retirement speech</option>
+                <option value="graduation">Graduation speech</option>
+                <option value="letter">Personal letter</option>
+                <option value="special-request">Anniversary speech, proposal, eulogy, or other special request</option>
+                <option value="other">Something else</option>
+              </select>
             </div>
 
             <div class="form-field">
               <label for="story">How can we help?</label>
               <span class="hint">A quick note is plenty — we'll follow up with next steps.</span>
               <textarea id="story" name="story" rows="4"></textarea>
+            </div>
+
+            <div class="form-field">
+              <label for="event-date">Do you have a date you're working toward? <span class="hint" style="font-weight:400;">(optional)</span></label>
+              <input type="date" id="event-date" name="eventDate" />
+              <p class="date-notice" id="date-notice" role="status">
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 6v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.4"/></svg>
+                <span>That's coming up soon! Some of our packages need more lead time than that, so a priority turnaround add-on may be a good idea — we'll go over timing together once we hear from you.</span>
+              </p>
             </div>
 
             <button class="btn btn-primary btn-block" type="submit">Send Your Inquiry</button>
