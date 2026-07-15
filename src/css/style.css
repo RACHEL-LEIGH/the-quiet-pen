@@ -1502,6 +1502,48 @@ html.js .reveal.is-visible {
   color: var(--sage);
 }
 
+/* ---- Compact contents list (e.g. workbook table of contents) ---- */
+.toc-list {
+  columns: 1;
+  column-gap: var(--space-xl);
+}
+
+@media (min-width: 700px) {
+  .toc-list {
+    columns: 2;
+  }
+}
+
+.toc-item {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--color-border);
+  break-inside: avoid;
+}
+
+.toc-item-num {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--sage);
+  flex-shrink: 0;
+  width: 1.7rem;
+}
+
+.toc-item-body h3 {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.2rem;
+}
+
+.toc-item-body p {
+  font-size: 0.86rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
 /* ---- Workbook preview mockups ---- */
 .preview-gallery {
   display: grid;
