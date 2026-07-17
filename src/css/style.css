@@ -1035,6 +1035,37 @@ html.js .reveal.is-visible {
   color: var(--white);
 }
 
+/* ---- 3x3 photo gallery ---- */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+@media (min-width: 700px) {
+  .photo-grid {
+    gap: var(--space-sm);
+  }
+}
+
+.photo-grid-item {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.photo-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.photo-grid-item:hover img {
+  transform: scale(1.06);
+}
+
 /* ---- Featured testimonial (photo + large quote) ---- */
 .featured-testimonial {
   display: grid;
@@ -1153,26 +1184,6 @@ html.js .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* Questionnaire cards use the same <details> mechanics with card chrome */
-.questionnaire-card {
-  background: var(--white);
-  border: 1px solid var(--color-border-soft);
-  border-radius: var(--radius-md);
-  margin-bottom: var(--space-sm);
-  overflow: hidden;
-}
-
-.questionnaire-card .accordion-trigger {
-  padding: 1.25rem 1.5rem;
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-.questionnaire-card .accordion-panel-content {
-  padding: 0 1.5rem var(--space-md);
 }
 
 /* ---- Blog cards ---- */
